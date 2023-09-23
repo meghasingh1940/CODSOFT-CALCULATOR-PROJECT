@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#dea356 , #e83597);
+    overflow: hidden;
+}
+
+.bubble-list{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.bubble-list span{
+    height: 60px;
+    width: 60px;
+    background: rgba(255,255,255,0.1);
+    animation: move 4s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes move {
+    100%{
+        transform: translateY(-90vh);
+    }
+}
+
+.bubble-list span.bubble-1{
+    transform: scale(2);
+    animation-delay: 1.5s;
+}
+.bubble-list span.bubble-2{
+    transform: scale(1.5);
+    animation-delay: 0.9s;
+}
+.bubble-list span.bubble-3{
+    transform: scale(0.9);
+    animation-delay: 2.5s;
+}
+.bubble-list span.bubble-4{
+    transform: scale(2.3);
+    animation-delay: 1.6s;
+}
+.bubble-list span.bubble-5{
+    transform: scale(2.8);
+    animation-delay: 2s;
+}
+.bubble-list span.bubble-6{
+    transform: scale(1.9);
+    animation-delay: 0.25s;
+}
+.bubble-list span.bubble-7{
+    transform: scale(1.75); 
+    animation-delay: 1.8s;   
+}
+
+.bubble-list span::before{
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 40%;
+    background: rgba(255,255,255,0.15);
+    transform: skew(45deg) translateX(150px);
+    animation: mirror 3s linear infinite;
+}
+@keyframes mirror {
+    100%{
+        transform: translateX(-60px);
+    }
+}
+
+.container{
+    width: 360px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 1px solid rgba(255,0,0,0.4);
+    border-left: 1px solid rgba(255,0,0,0.4);
+}
+
+.container input[type="text"]{
+    width: 100%;
+    height: 80px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.container input[type="button"]{
+    margin-top: 15px;
+    height: 60px;
+    width: calc(100%/4 - 5px);
+    outline: none;
+    border: none;
+    border-radius: 14px;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.container input[type="button"]:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
